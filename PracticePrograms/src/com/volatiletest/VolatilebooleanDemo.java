@@ -2,7 +2,7 @@ package com.volatiletest;
 
 public class VolatilebooleanDemo {
 	static boolean flag = true;
-	// volatile static boolean flag = true; //with volatile
+	//volatile static boolean flag = true; //with volatile
 
 	public static void main(String[] args) throws InterruptedException {
 		
