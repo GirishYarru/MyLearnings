@@ -1,0 +1,6 @@
+Stream api methods:
+Intermediate Operations
+1)filter(Predicate) :: Stream
+2)map(Function) - > takes functions as argument and apply this function to each element in stream
+3)mapToInt -> 
+3)flatmap()-> can be used to merge or flatten few streams in single stream
