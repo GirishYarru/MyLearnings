@@ -1,0 +1,21 @@
+why hashTable doesn't supports null keys and values?
+Ans:-
+its legacy class
+//Doesnot allow null keys
+to get hashcode directly uses -> key.hashCode() --> null pointer exception
+
+//Does not allow null values
+incase of multi threaded environment if we are allowing null values
+behaviour varies
+
+Ex-
+
+if(table.contains()){
+   return table.get(key);
+}else{
+    throw Exception();
+}
+
+if t1 executes code and checks if key is there mean while(before executing table.get(key))
+t2 removes key then correct answer is Exception but still we will get 
+

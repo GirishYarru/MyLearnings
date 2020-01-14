@@ -1,0 +1,38 @@
+create table public.EmployeeSalary(  
+  empid     integer not null,  
+  project    character varying(256),
+  salary integer not null,
+  constraint empid primary key (empid)
+);
+commit;
+
+create table public.employeeDetails(
+empid integer not null primary key,
+name character varying(256),
+company character varying(256)
+);
+commit;
+
+
+insert into public.EmployeeSalary values(120,'P1',1000);
+insert into public.EmployeeSalary values(121,'P1',2000);
+insert into public.EmployeeSalary values(122,'P1',3000);
+insert into public.EmployeeSalary values(123,'P1',4000);
+
+insert into public.employeeDetails values (120,'abc','tcs');
+insert into public.employeeDetails values (121,'aaa','mindtree');
+insert into public.employeeDetails values (122,'bbb','benz');
+insert into public.employeeDetails values (123,'ccc','cognizant');
+insert into public.employeeDetails values (124,'ddd','e n y');
+select * from public.employeeDetails;
+select * from public.EmployeeSalary;
+
+//1)select count of employees working in project p1;
+select count(*) from public.EmployeeSalary where project='P1';
+
+//2)Employee names having salary >=2000 and <=3000
+select name from public.employeeDetails where empid in (select empid from public.EmployeeSalary where salary between 2000 and 3000);
+
+//3)select count of employees for project and count of employees should be in descending order and project in ascending order
+select project,count(empid) from public.EmployeeSalary group by project order by count(empid) desc,project asc;
+//4

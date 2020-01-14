@@ -1,0 +1,183 @@
+Jsp - server sde technology
+all processing at server,
+creating synamic web applcns
+write java code in html using jsp tags or scriplets  ex:- <%=java.util.Date()%>
+
+Difference between servlets and jsps
+Servlets add html cod einside java.
+jsp adds java code inside html.
+Servlets:-
+1)supports html code
+2)Generally used for developing business logic
+JSp:-
+supports java code, embedded java
+used for developing presentation layer
+
+Lifecycle of jsp:-
+1)Translation:- jsp page to servlet class(skips if jsp is already loaded and not modified)
+2)compilation and loading :- container compiles servlet prgm,loads servlet class,and 
+initialization:-instantiate servlet class--> calls jspInit();
+Request processing :-jspService() is invoked with a request (HttpServletRequest) and response (HttpServletRespnse) objects as parameters 
+destruction:-jspDestroy() method to destroy the instance of the servlet class. 
+
+JSP tags:-
+1)Declaration:- <%! %> used to declare class level variables, class level variables-->jsp container keeps this code out of jspService() metgods
+2)Scriplets:- <% %> used to declare local variables or methods, not class level scope. keeps this code inside jspService() method.
+                    code inside this jspService() executes for every request
+3)Expression:- <%= %>Evaluates the result inside tags and convert to string and then writes to browser.
+                    Ex:-  exp of values
+					<%= 2*3+2%>
+					Ex:-
+					exp of variables
+					<% string str = "abc";
+					 string str1 = "def";
+					 %>
+					 <%= a+b+c%>
+					 setting applcn implicit objects
+					 instance of java.servlet.servletContext --> initializing parameters and sharing across entire jsp
+					 <% application.setAttribute("MyName", "Chaitanya"); %>
+					 Obj getAttribute("");
+					 void setAttribute(attrbuteName,Object obj);
+					 String s=application.getInitParameter(“parameter1”);
+					 Enumeration e= application.getinitParameterNames();
+					 application.getServerInfo(); --> version of jsp
+					 
+JSP Directives:-
+control the processing of jsp page
+gives directions to the server regarding procesing of page
+Three directives
+1)Page directive
+2)Include directive
+3)Taglib directive
+
+Page Directive:-
+Several attributes used along with this
+1)import:-  <%@page import="value"%> used to importr packeges(ex;-java.util) <%@page import="java.lang.*%>
+2)session:- we need to give acces to user only till his session is active <%@ page session="true"%>
+3)isErrorPage:- To make this jsp page as error page for anotherpage. <%@ page isErrorPage="true" %> 
+4)errorPage:- We can redirect to error page if any exception occurs.<%@ page errorPage="exception.jsp" %> in exception.jsp we can use <%@ page isErrorPage="true" %>
+5)contentType:- used to set content type of jsp page <%@ page contentType="text/html"%>
+6)isThreadSafe:- jsp supports multi threading. <%@ page isThreadSafe="value"%>
+7)extends:- also supports inheritance. <%@ page extends="mypackage.SampleClass"%>
+8)info:- provide description to jsp page. <%@ page info="This code is given by Chaitanya Singh"%>. we can get info when we call  getServletInfo();
+
+9)language
+10)autoflush:- buffer will be flushed out when buffer is full. <%@ page autoFlush="true"%>
+11)buffer:-This attribute is used to specify the buffer size. If you specify this to none during coding then the output would directly written to Response object by JSPWriter. And, if you specify a buffer size then the output first written to buffer then it will be available for response object. <%@ page buffer="none"%> or <%@ page buffer="5kb"%>
+
+
+2)Include directive:-
+Merging external file to current jsp. During translation phase.
+enhance code resuability. <%@ include file="URL of the file" %>
+
+Note:- indclude directive vs include tag
+include directive :- include file at translation phase.,used for static pages.if included file is chnages but not original jsp then changes are not refleced.
+include tag :- include file at request time.used for dynamic pages. if included file is changed then changes are reflected.
+syntax:-
+include directive-<%@ include file="file_name" %>
+include tag-<jsp:include page="file_name" />
+Params:-
+using include directive - we can't add parameters.
+using include action we can add parameters.
+<jsp:include page="file_name" />
+ <jsp:param name="parameter_name" value="parameter_value" />
+ </jsp:include>
+
+
+3)Taglib:- used to declare custom tags.
+<%@taglib uri ="taglibURI" prefix="tag prefix"%>
+Instead of using scriplet tags we can use jstl tags
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="co" value="India" scope="session"/>
+<c:set var="st" value="UP" scope="session"/>
+<c:set var="ci" value="Agra" scope="session"/>
+<%@ include file="file1.jsp" %>
+
+Exceptiuonal handling:- we can also use either try catch block or error pages(used along with page directive)
+
+
+Directives Vs Actions:-
+directives are used during page translation
+action are reevaluated when ever page is accessed
+
+
+-----------------------------Session------------------
+Session tracking:- maintain state of user. 
+Session management.
+Http protocol is stateless so we need to maintain stateusing session tracking techniques.
+Each time user requests the server, server treats the request as new request.
+To recognize the state of particular user wee need session management.
+Session management techniques:
+1)Cookies
+2)Hidden from field
+3)URL rewriting
+4)Http Session
+
+Cookies:-
+we add cookie with response from the server. so cookie is stored in cache of browser.
+So if user requests again ..cookie is added with request by default
+There are two types of cookies:
+1)Non - persistent:- it is valid for single sesion only. Removed each time when browser is closed
+2)Persistent cookies:- valid for multiple sessions. Not removed if browser is closed. Removed only when user sign out.
+
+we can set name and values
+constructors:
+Cookie();
+metrgods:
+setMaxAge();
+String getName()
+StringgetValue()
+void setMaxAge();
+Cookie(String name, String value)
+
+Disadv:
+will not work if cookies are disabled in browser
+
+2)Hidden field:-
+text field is used for mauntainng state of user
+Not required to depend on browser
+<input type="hidden" name="uname" value="Vimal Jaiswal">
+Disadvantges:-
+Extra form submission is required
+
+Httpsession:-
+this interface allows users to view and manipulate session information -> session creation time,last accessed time.
+request.getSession() - use existing session if avaliable or else return null
+request.getSession(true) - use the existing session or create new session.
+session.setAttribute("","");
+session.setMaxTime();
+session.inValidate();
+used to create a session between client and server
+
+doget and do post:-
+request to get from server.
+data/parameters sending is limited for doGet(240 bytes)
+Post;-
+Large amount of data can be sent
+
+Get
+data is not secured..exposed in URL bar
+Post
+data is not exposed in url bar
+
+RequestDispatcher:
+RequestDispatcher rd=request.getRequestDispatcher("servlet2");  
+rd.forward(req,resp);
+1)Provides a facility to dispatching req to another resource(servlet or jsp)
+public void forward(ServletRequest request,ServletResponse response) -> forwards a req from one servlet to another resource
+2)public void include(ServletRequest request,ServletResponse response) -> it includes the content of resource
+
+SendRedirect:
+Method present in HttpResponse
+response.sendRedirect("");
+
+
+
+
+
+					 
+					 
+
+
+
+

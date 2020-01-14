@@ -1,0 +1,196 @@
+****** hacker rank interview challenges *****
+https://www.hackerrank.com/interview/interview-preparation-kit?h_l=domains&h_r=hrw&utm_source=hrwCandidateFeedback
+https://java2blog.com/sorting-algorithms-java/ --->>>>goood noce
+https://www.hackerrank.com/interview/interview-preparation-kit?h_l=domains&h_r=hrw&utm_source=hrwCandidateFeedback
+
+https://java2blog.com/sorting-algorithms-java/
+https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/tutorial/
+
+1)Projects
+basic java
+oops
+multi threading
+executer service
+memory questions
+(String,for loop creating aray and same array created and adding data -->what will happen in in memory
+outside for loop)
+prgms--> Strings and arrays
+
+
+https://javatutorial.net/jvm-explained
+https://www.codejava.net/java-core/the-java-language/what-is-encapsulation-in-java-the-what-why-and-how
+
+Experienced working with core java,Collections and design patters,proficient in technologies such as Spring,Hibernate,Spring boot,Microservices,Oracle,Good analyical and communication skills
+Seeking Roles in Software Development,
+
+
+
+_https://www.geeksforgeeks.org/fundamentals-of-algorithms/ 
+_https://www.geeksforgeeks.org/data-structures/
+
+
+//---------multiple inheritance  2019-06-25T11:05:34.954
+inheritance
+https://www.geeksforgeeks.org/inheritance-in-java/
+
+https://beginnersbook.com/2013/03/inheritance-in-java/
+https://beginnersbook.com/2013/05/java-multiple-inheritance/
+Super Keyword:
+https://beginnersbook.com/2014/07/super-keyword-in-java-with-example/
+multiple imheritance:
+https://stackoverflow.com/questions/6587621/can-one-class-extend-two-classes/40794822
+
+geekforGeeks:
+https://www.geeksforgeeks.org/default-methods-java/
+inheritance ques:
+https://www.geeksforgeeks.org/java-and-multiple-inheritance/
+
+impoetance -> multiple imheritance:
+https://www.journaldev.com/1775/multiple-inheritance-in-java
+Quora
+https://www.quora.com/How-can-I-achieve-multiple-inheritance-in-Java
+https://www.quora.com/How-is-this-multiple-inheritance-through-class-possible-in-Java
+
+
+//serilization in jva
+https://www.quora.com/Is-it-compulsory-to-make-hibernate-POJO-serializable-if-yes-why-and-in-which-case-we-need-to-make-If-no-why
+https://stackoverflow.com/questions/2020904/when-and-why-jpa-entities-should-implement-serializable-interface
+
+
+ ---> HashCode and eauals in java<------
+ https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/
+
+--> Good
+https://www.codejava.net/java-se/file-io/why-do-we-need-serialization-in-java
+https://stackoverflow.com/questions/2475448/need-of-serialization-in-java
+-->Good
+http://java-questions.com/Serialization-interview-questions.html
+https://softwareengineering.stackexchange.com/questions/191269/java-serialization-advantages-and-disadvantages-use-or-avoid
+--> Good
+https://javapapers.com/core-java/abstract-and-interface-core-java-2/what-is-a-java-marker-interface/
+
+
+C:\Windows\System32\cmd.exe
+C:\Users\M1048219\Desktop\New folder
+
+//---->>>
+Arrays, Linked Lists, Trees, Graphs
+Stacks, Queues
+Hash Tables
+Heaps
+Searching and Sorting
+
+OOPs
+Polymorphism
+Abstraction
+Encapsulation
+Complexity Theory
+
+coding
+Data Types
+Iteration, Recursion, Decision
+Procedre, functions and scope
+
+//------------------
+The two questions in Automata asked were :
+1)Given an integer S and integers M, N find the value of ((S^M)%10)^N)%1000000007. The question is a modified form of this question.
+Modular Exponentiation
+
+2)Given a string remove all vowels in a string and return the string.
+3)Rearrange array such that all odd numbers occupy odd positions and even numbers occupy even position. Order of numbers needs to be maintained without use of extra space
+Reverse a string, Find middle of a linked list, Delete a node in the linked list, Dynamic programming coding questions, string manipulation questions and basic questions on binary tree and BST.
+Balanced Trees, AVL Tree Deletion Insertion and other tree based questions.
+OS and DBMS were basic questions. 
+
+
+
+class A{
+B b = new B();
+}
+
+if class b is not loaded --> class not found exception
+if we use autowired
+
+class A{
+
+@Autowired
+private B b;
+
+}
+
+2) sql case
+
+3) sql native query and hibernate query
+
+sql - compile time
+hql - run time 
+
+
+4)what is jpql
+
+5)Runnable and callable
+6)atoicity, atomic integer
+  volatile --> directly access from memory
+  Ex:-
+  int a =10;
+  threadt t1 --> access and make it as 11.
+  Mean while thread t2 accessing ..and value is still 10(presennt in cache memory); so it also makes it as 11;
+  
+  in that case if we use volatile -> thread directly access it from memory
+  7)difference between dead locak and race around condition
+
+Oracle
+1)method overloading
+2)method overriding --> how to prevent call from parent class
+3)static in method overriding
+4)constructor types -> 
+    constructor(int,char)
+    constructor(char,int)
+5)00001234 --> how to remove zeros with out iterating
+6)Get,put,post,patch
+7)private, protected,default,public
+8)How to handle exceptions
+9)Hash map - internal working
+ can we insert objs in keys
+10)static thread safe??
+
+
+//-----2nd round
+1)how is encapsulation feature of java
+2)why getters and setters public
+3)Serilization and deserilization
+4)Abstract and interface examples
+5)list[AYUSH,ayush,KEER,keer] --> find uniques strings in list with out for loop
+
+
+sql --->
+https://www.w3resource.com/mysql-exercises/join-exercises/write-a-query-to-get-the-department-name-and-number-of-employees-in-the-department.php
+https://en.m.wikibooks.org/wiki/SQL_Exercises/Employee_management
+
+balanced paranthesis -->
+https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/
+https://stackoverflow.com/questions/23187539/java-balanced-expressions-check
+https://java2blog.com/check-for-balanced-parentheses-in-expression-java/
+https://www.sanfoundry.com/java-program-implement-check-balanced-parenthesis-using-stacks/
+
+
+JVM:-
+https://www.waytoeasylearn.com/2016/05/jvm-tutorial-part-3.html
+Java io streams:-
+https://www.javaguides.net/p/java-io-package-tutorial.html
+https://beginnersbook.com/java-io-tutorial-with-examples/
+http://tutorials.jenkov.com/java-io/bytearrayoutputstream.html
+http://net-informations.com/java/cjava/stream.htm
+https://www.developer.com/java/data/understanding-byte-streams-and-character-streams-in-java.html
+https://www.studytonight.com/java/java-io-stream.php
+https://hajsoftutorial.com/java-stream-classes/
+https://www.codementor.io/java/tutorial/serialization-and-deserialization-in-java
+
+Hibernate dialect:-
+https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/session-configuration.html
+Session save and persist:-
+https://codesjava.com/what-is-the-difference-between-session-save-and-session-persist-method-in-hibernate
+
+SQL:-
+https://artoftesting.com/interviewSection/sql-queries-for-interview.html
+https://www.w3resource.com/sql-exercises/employee-database-exercise/index.php

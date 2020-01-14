@@ -1,0 +1,64 @@
+Tech primers
+https://www.youtube.com/watch?v=bYiNlCaaRiI
+Codez Tech - node js
+https://www.youtube.com/watch?v=2Pf8nyL7Dks&list=PLwfbCU-sjpjGOZn7D6-90BqvHA5zuiLmM&index=4
+Edureka
+https://www.youtube.com/watch?v=MRMgd6E9AXE
+Tech primers
+https://www.youtube.com/watch?v=bYiNlCaaRiI&list=PLpIpwPQLMcs-v54HClIOriTo7r8-6ucw5
+Intellipat
+https://www.youtube.com/watch?v=cC4GGJ0JsSE
+
+Elastic
+https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html
+Quora
+https://www.quora.com/How-does-Elasticsearch-work
+https://www.indiumsoftware.com/blog/elasticsearch-for-dummies/
+Elastic Search demo
+https://www.youtube.com/watch?v=hVSC4ZNiVdA
+
+Elastic Searcg tutotial
+https://www.youtube.com/watch?v=P35CTWgEpS0&list=PLTgRMOcmRb3OEVdCy7GROEhDWn1CZptAA&index=2
+
+currently doing
+https://www.youtube.com/watch?v=bYiNlCaaRiI&list=PLpIpwPQLMcs-v54HClIOriTo7r8-6ucw5
+need to do
+https://www.youtube.com/watch?v=dlChXjE7IHw&t=160s
+
+
+elastic search is search engine built out of leucene.
+store messages in form of json. You can easily query and search for data using http calls.
+Spring data has wrap around these elastic search and makes simple in loading data from elastic search
+dependencies:
+spring-boot-starter-web
+spring-boot-starter-data-elasticsearch
+1)need to load data into elastic search
+Configuration class ->
+@Configuration@EnableElasticRepositories -> to scan the files and repositary folder and create repositary
+
+
+1)java8 streams --> all even numbers
+2)list1 contains another list2
+3)threads creation
+4)how to monitor threads
+5)inheritance concept variables
+6)Access modifiers
+7)final, finally
+8)IOC and Applicationcontext
+9)Microservices Architecture
+10)Rest services
+11)Working of hashmap
+
+2nd
+1)fibonacci series
+2)mocroservices-> what if eurekha server is down
+3)when api is down
+4)Rest Services
+ get/post/put/delete
+5)Spring boot adv
+6)prime numbers
+7)sort employee
+8)Junit testing
+
+3rd
+Challenges in microservices

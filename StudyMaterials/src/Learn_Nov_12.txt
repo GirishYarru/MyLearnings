@@ -1,0 +1,31 @@
+1)Difference between Restclient and webclient
+Ans:-
+rest client:
+Synchronous and blocking client,
+--> rest client uses the Java Servlet API, which is based on the thread-per-request model.
+scenario - rest service is slow so when all the request hit the service all the requests are piled up and can be creating the problem
+like exhausting thread pool and consumes all available memory.
+-->performance degradation.
+
+WEB CLIENT:
+Asynchronous non-blocking client provided by spring reactive frame work
+event driven architecture.
+scenario:
+how rest client creates thread, similar way web client create task for each even and behind the scenes
+all the taskes are queued and executes them only when appropriate response is received.
+
+example:-
+RestTemplate t = new RestTemplate();
+t.getforObject("uri",reqObj,respClass);
+Sysos("completed executing");
+
+o/p:-
+first executes getForObject
+and finally
+completed executing
+
+Flux<RespObj> = WebClient.create()
+                .get()
+                .uri("")
+                .retrieve()
+                .bodyToFlux(Resp.class);
