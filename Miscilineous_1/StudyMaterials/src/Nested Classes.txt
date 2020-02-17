@@ -1,0 +1,14 @@
+class inside another class
+Rules:
+1)scope ois same as the scope of outer bounding class
+2)nested classes can access all the members(including private members) but reverse is not true;
+3)nested classes can be private,protected,default and public.
+
+Nested classes two categories:
+1) Static Nested
+2) Inner classes
+       a)local inner classes
+	   b)Anonymous classes
+	   
+1)Static nested classes:
+	   

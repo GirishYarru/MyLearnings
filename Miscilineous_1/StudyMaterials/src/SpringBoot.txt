@@ -1,0 +1,160 @@
+Spring boot:
+spring framework : 
+1)configurations using annotations,xml and java configurations
+spring popular for many reasons:
+1)spring DI helps to write testable code
+2)Database transaction management capabilities
+3)can be integrated with other framework like JPA,JSF,Struts,JSF etc
+Many spring sister projs help to build web applcns:
+Spring data: simplifies data from relational and no sql data stores
+Spring batch : provides powerful batch processing framework.
+spring security : provides security to secure applcns.
+
+Spring boot intro:
+provides RAD(Rapid application development) to spring.
+dependent on spring starter templates.
+1)Spring starter template
+2)Spring boot auto configurations
+3)Spring Embedded Servers
+4)Boot starp the application
+spring starter template :(one stop shop for all dependencies)
+collection of all relevant transitive dependencies that are required to start a particular functionality.
+Ex: spring MVC -> in traditional way u need to add all the dependencies some times which may result i version conflicts and other run time exceptions.
+
+In spring boot u can use spring-boot-satrter-web which internally imports all 
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.1.6.RELEASE</version>
+    <relativePath />
+</parent>
+ 
+<!-- Spring web brings all required dependencies to build web application. -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
+Examples :
+spring-boot-starter-data-jpa
+spring-boot-starter-data-jdbc
+https://github.com/spring-projects/spring-boot/tree/master/spring-boot-project/spring-boot-starters/
+
+2)Spring boot auto configuration:
+Auto configuration is enabled with @EnableAutoConfiguration 
+@EnableAutoConfiguration :- 
+scans class path,find libraries in class path and attempt to guess the best configuration for them and finally configure all such beans.
+Auto configuration is always applied after user defined beans are registered
+Example : first spring scans class path and finds all the classes with annotations(Ex: @component..etc) and configure those classes as spring beans
+If no configuration classes are found then spring do not provide any configuration for them.
+
+3)Spring Embedded servers:
+spring boot applcns always include tomcat as embedded server . so that you can run ur applicatons in command prompt.
+You can also exclude embedded tomcat and include any other emd=bedded servers.
+
+Example : 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+ 
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+
+4)Bootstrap the application :
+To run any spring boot application we use @springBootApplication
+@SpringBootApplication -> @Configuration,@EnableAutoConfiguration and @ComponentScan
+Enables the scanning of configuration classes,files and and load them to spring context.
+Execution start with main(), start loading and configure them and also bootstrap the application basesd on properties file in resources folder
+Adv of spring boot:
+1)helps in resolving depe
+
+@Profile :-
+introduced in spring 3.1
+it is used only for bean level from spring 4 and above it can be used at bean level or method level
+Mainly used to register beans based on which eb=nvironment your application is running.
+spring.profiles.active=prod
+@Profile("prod")
+
+
+Excellent
+https://iamninad.com/conditional-bean-creation-in-spring-boot/
+
+how spring applcn runs
+
+https://dzone.com/articles/spring-boot-under-the-hood
+
+
+hibernate lazy loading
+using jpa you can fetch entity and also relation ships
+Fetching
+1)Eager fetch - associations are fetched along with parent
+2)Lazy fetch
+
+@ManyToOne and @OneToOne annotations are fetched EAGERly,
+@OneToMany and @ManyToMany relationships are considered LAZY. 
+
+https://vladmihalcea.com/how-to-detect-the-n-plus-one-query-problem-during-testing/
+
+
+
+
+@Repositary - 
+@Repository’s job is to catch platform specific exceptions and re-throw them as one of Spring’s unified unchecked exception. For this, we’re provided with PersistenceExceptionTranslationPostProcessor.
+<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+This bean post processor adds an advisor to any bean that’s annotated with @Repository so that any platform-specific exceptions are caught and then re-thrown as one of Spring’s unchecked data access exceptions.
+
+@Controller - 
+ The dispatcher scans the classes annotated with @Controller and detects methods annotated with @RequestMapping annotations within them. We can use @RequestMapping on only those methods whose classes are annotated with @Controller and it will NOT work with @Component, @Service, @Repository etc...
+ 
+ @Service beans hold the business logic and call methods in the repository layer.
+  No any difference as of now but Spring may add some additional exceptional in future.
+  Similar to above, in the future Spring may add special functionalities for @Service, @Controller and @Repository based on their layering conventions.
+  
+  
+Understanding Spring DAO support with DataAccessException
+
+  The Data Access Object (DAO) support in Spring allows us to isolate minimal amount of code related to particular database technology easily. The most important DAO support is DataAccessException hierarchy which let the client code handle the exceptions without knowing the details of the particular data access API in use (e.g. JDBC, JPA, Hibernate etc). That means it is possible to handle an exception like JdbcSQLException in a generic way without knowing that JDBC is being used in the DAO layer. This allows one to switch between the persistence technologies easily without changing a lot of code.
+
+Also DataAccessException is a RuntimeException exception. That allows us to handle non-recoverable persistence exceptions without writing boilerplate catch-and-throw blocks and exception declarations in DAOs.
+
+example:-
+  public void saveEmployee(Employee employee) {
+      try {
+          employeeDao.save(employee);
+      } catch (DataAccessException dae) {
+          System.err.println(dae);
+      }
+  }
+  
+  
+  spring boot interview questions
+  1)what is spring boot?
+  Approach to develop stand alone applications
+  develop applications with minimal configuration
+  opinionated view of spring framework
+  Auto dependency resolution,Auto configuration,embedded servers(jetty/tomcat) servers,health monitor
+  
+  2)Spring boot componnets?
+  Spring boot starter
+  Spring boot Auto configurator
+  Spring boot Actuator
+  Spring boot CLI
+  Spring boot initializer
+  
+  
+
+
+
+
+
+
+

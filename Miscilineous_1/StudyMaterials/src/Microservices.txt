@@ -1,0 +1,29 @@
+
+@PropertySource("classpath:beans.properties") 
+Microservices:
+https://cloud.spring.io/spring-cloud-netflix/multi/multi__service_discovery_eureka_clients.html
+https://cloud.spring.io/spring-cloud-netflix/multi/multi__service_discovery_eureka_clients.html
+https://medium.com/@lalitham/microservices-service-registry-and-its-patterns-35d725cbfb67
+https://cloud.spring.io/spring-cloud-static/spring-cloud.html#_peer_awareness
+https://medium.com/@fahimfarookme/the-mystery-of-eureka-self-preservation-c7aa0ed1b799
+https://dzone.com/articles/the-mystery-of-eureka-health-monitoring
+
+///---
+https://cloud.spring.io/spring-cloud-netflix/reference/html/
+https://cloud.spring.io/spring-cloud-netflix/reference/html/
+zuul--
+https://github.com/Debesh1234/DemoSpringBootProjects
+https://www.youtube.com/watch?v=-IOBubnPgfg
+---good https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/
+--different gate ways
+https://engineering.opsgenie.com/comparing-api-gateway-performances-nginx-vs-zuul-vs-spring-cloud-gateway-vs-linkerd-b2cc59c65369
+
+
+https://cloud.spring.io/spring-cloud-netflix/multi/multi__router_and_filter_zuul.html
+https://javabeginnerstutorial.com/spring-boot/spring-boot-2-microservices-with-netflix-zuul-api-gateway/
+https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/
+
+https://sivalabs.in/2018/03/microservices-part-5-spring-cloud-zuul-proxy-as-api-gateway/
+
+--spring security
+https://www.youtube.com/watch?v=ooClE1a2pkA&list=PLGXpHMFOMTTbCC4t6WSoKfVnUxHmyGXKJ

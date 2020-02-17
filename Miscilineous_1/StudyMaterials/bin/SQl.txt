@@ -1,0 +1,124 @@
+     create table department
+    (
+      dept_id int not null,
+      dept_name varchar(100) not null,
+      dept_location varchar(100) not null,
+      primary key (dept_id)
+    );
+
+    create table employee 
+    (
+      emp_id int not null,
+      emp_name varchar(100) not null,
+      mgr_emp_id int,
+      dept_id int not null,
+      primary key (emp_id),
+      foreign key (dept_id) references department(dept_id) on delete no action on update no action
+    );
+
+
+//create table for department
+     create table department
+    (
+      dept_id int not null,
+      dept_name varchar(100) not null,
+      dept_location varchar(100) not null,
+      primary key (dept_id)
+    );
+
+//create table for employee
+    create table employee 
+    (
+      emp_id int not null,
+      emp_name varchar(100) not null,
+      mgr_emp_id int,
+      dept_id int not null,
+      primary key (emp_id),
+      foreign key (dept_id) references department(dept_id) on delete no action on update no action
+    );
+
+    //insert values into department
+
+     insert into department values 
+    (1, 'Dept-1', 'Chicago'), 
+    (2, 'Dept-2', 'London');
+
+//insert vakues into employee
+     insert into employee values 
+    (1, 'Sandeep', null, 1),
+    (2, 'Ramana Reddy', 1, 1),
+    (3, 'Girish', 1, 1),
+    (4, 'Sandhya', null, 2),
+    (5, 'Shweta', null, 2);
+
+    
+select emp_id,emp_name,mgr_emp_id,department.dept_id from department left join employee on employee.dept_id = department.dept_id and mgr_emp_id = emp_id where employee.mgr_emp_id is not null order by employee.emp_name limit 3;
+
+
+SELECT Dept_name, Dept_Location, employee.emp_name,employee.mgr_emp_id,emp_id,employee.dept_id
+FROM department 
+LEFT JOIN Employee ON (department.Dept_id = Employee.Dept_id)
+
+select * from employee
+
+select 
+  list.*,
+  emp_id,
+  emp_name
+from employee
+inner join 
+(
+  select
+    distinct 
+    department.dept_id, 
+    department.dept_name, 
+    department.dept_location, 
+    employee.mgr_emp_id
+  from department
+  left join employee on department.dept_id = employee.dept_id
+  where 
+    employee.mgr_emp_id is not null
+) list
+on employee.emp_id = list.mgr_emp_id;
+
+
+
+     create table PrimaryKeyTest
+    (
+      id int,
+      name varchar(100)
+    
+    );
+
+select * from PrimaryKeyTest;
+    insert into PrimaryKeyTest values('1','sandhya');
+    insert into PrimaryKeyTest values('2','shweta');
+    insert into PrimaryKeyTest values('3','sandeep');
+    insert into PrimaryKeyTest values('4','Ramana reddy');
+    insert into PrimaryKeyTest values('1','girish');
+        insert into PrimaryKeyTest values(1,'girishTest');
+
+        update PrimaryKeyTest set id = foo_a_seq where id is null
+
+        ALTER TABLE PrimaryKeyTest ALTER COLUMN id DROP IDENTITY
+
+ ALTER TABLE PrimaryKeyTest 
+ALTER COLUMN id ADD GENERATED ALWAYS AS IDENTITY;
+
+ ALTER TABLE PrimaryKeyTest 
+ALTER COLUMN id set not null;
+
+DROP SEQUENCE foo_a_seq CASCADE;
+    CREATE SEQUENCE foo_a_seq START WITH 1;
+
+
+    update PrimaryKeyTest set id=nextval('foo_a_seq') where id is null
+ALTER TABLE PrimaryKeyTest ALTER COLUMN id SET DEFAULT nextval('foo_a_seq');
+
+    Alter table PrimaryKeyTest ADD primary key (id);
+
+    //detecting duplicate records
+    select id,count(*)
+from PrimaryKeyTest
+group by id
+HAVING count(*) > 1

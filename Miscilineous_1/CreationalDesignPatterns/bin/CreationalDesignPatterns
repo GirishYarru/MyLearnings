@@ -1,0 +1,34 @@
+Creational Design patterns:
+process of cretaing objects of a class.
+Why to use creational design patterns instead of using new operator?
+Some scenarios like need to do addition requriements for creating objects like:
+1)Your object may need multiple other Objects before it is created
+2)Multiple steps need to be done before creating objects like 
+   itearting
+   fetching data from file
+   queriying database
+3)need to create only one object for entire db ...etc
+Types of creational design patterns
+1)Builder
+2)Simple factory
+3)factory method
+4)Abstractory factory
+5)singleton
+6)prototype
+7)Singleton
+
+
+1)Singleton:-
+creating only one object per jvm
+real time examples:- log4j
+Rules:
+i)static member
+ii)private constructor
+iii)factory method
+
+Singleton ways :-
+1)eager initialization
+2)lazy initialization
+4)Thread safe initialization
+5)Reflection to destroy singleton
+6)Serilization and singleton
