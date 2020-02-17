@@ -1,0 +1,100 @@
+<!-- <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" -->
+<!-- "http://www.springframework.org/dtd/spring-beans.dtd"> -->
+
+<!-- <beans xmlns="http://www.springframework.org/schema/beans" -->
+<!--     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
+<!--     xsi:schemaLocation=" -->
+<!--         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"> -->
+<!-- 	<bean id="t" class="com.helloworld.HelloWorld"> -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<bean id="t" class="com.helloworld.HelloWorld" >
+		<property name="name" ref="n"></property>
+		<constructor-arg ref="n" />
+		<constructor-arg value="mindtrree" index="1" />
+		<!-- <ref bean="n"/> -->
+		<!-- </constructor-arg> -->
+	</bean>
+	<bean id="n" class="com.helloworld.Name">
+		<constructor-arg value="mindtrree" />
+	</bean>
+	<bean id="arraySI" class="com.helloworld.PrimitiveArraySetterInjection">
+		<constructor-arg>
+			<list>
+				<value>1</value>
+				<value>2</value>
+
+			</list>
+		</constructor-arg>
+		<property name="names">
+			<list>
+				<value>Tcs</value>
+				<value>mindtree</value>
+			</list>
+		</property>
+
+	</bean>
+	<bean id="e" class="com.helloworld.Engine">
+		<property name="model" value="2014" />
+	</bean>
+	<bean id="e1" class="com.helloworld.Engine">
+		<property name="model" value="2015" />
+	</bean>
+	
+		<bean id="e2" class="com.helloworld.Engine">
+		<property name="model" value="2016" />
+	</bean>
+	<bean id="e3" class="com.helloworld.Engine">
+		<property name="model" value="2017" />
+	</bean>
+	
+	<bean id="car" class="com.helloworld.Car">
+	<constructor-arg>
+	<list>
+		<ref bean ="e2"/>
+		<ref bean ="e3"/>
+		
+	</list>
+	</constructor-arg>
+<!-- 		<property name="engines"> -->
+<!-- 			<list> -->
+<!-- 				<ref bean="e" /> -->
+<!-- 				<ref bean="e1" /> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+	</bean>
+	<bean id ="specific" class = "com.helloworld.SpecificDataType">
+<!-- 	<property name="specificNames"> -->
+<!-- 	    <util:list id="itemList" list-class="java.util.ArrayList"> -->
+<!--         <value>Laptop</value> -->
+<!--         <value>RAM</value> -->
+<!--         <value>Drive</value> -->
+<!--         <value>Drive</value> -->
+<!--     </util:list> -->
+<!-- 	</property> -->
+	<constructor-arg>
+	<util:list id="itemList1" list-class="java.util.ArrayList">
+        <value>Laptop</value>
+        <value>RAM</value>
+        <value>Drive</value>
+        <value>Drive</value>
+    </util:list>
+	</constructor-arg>
+	</bean>
+		<bean id="map" class="com.helloworld.MapTest">
+		<property name="map">
+		<map>
+		<entry key = "india" value="delhi"></entry>
+		<entry key = "pak" value="islam"></entry>
+		
+		</map>
+		</property>
+	</bean>
+</beans>		
+			
+			
