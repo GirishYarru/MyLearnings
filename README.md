@@ -77,30 +77,43 @@ sample response
 }]
 ```
 
-#### Task 1
 
-Add the route and return the data structure that represents the animals example above.
+### 2. `POST /api/tree/`
 
-*Note: This will be the first endpoint we test.*
-<br><br>
-
----
-<br>
-
-### 2. `POST /api/tree/` with the payload of the format
-
+sample payload
 ```
 {
-    "parent": "<id>",
-    "label": "<label>"
+    "parent": "1",
+    "label": "ant"
 }
 ```
 
-Will cause a node to be added to the end of a list of children, a new unique id should be assigned by the service. The response should be simple.
+sample Response
+```
+{
+    "insertionDate": "02/17/2023 5:40:07 am",
+    "status": "SUCCESS",
+    "node": {
+        "parent": 3,
+        "label": "cat"
+    }
+}
+```
 
-#### Task 2
+sample Response in case of exception
+```
+{
 
-Implement the route, and ensure that a `GET /api/tree` request returns the updated tree.
+    "status": "FAILED"
+    "cause": "parent not found for the given parent id : 1311",
+    "date": "02/17/2023 5:43:32 am"
+}
+```
+
+
+#### Please Note - Default 1 parent( id -1 and label - root)
+
+**This application by default has the parent with id = 1 and label = root**
 <br><br>
 
 ---
