@@ -122,13 +122,34 @@ sample Response in case of exception
 
 ### 3. Data persistance
 
-Hopefully relational database should be sufficient for this approach. There are many RDB's available. I would choose either MYSQL or Postgres as they are popullar
+Hopefully relational database should be sufficient for this approach. There are many RDB's available in market. I would choose either MYSQL or Postgres as they are popular
 for their features
 
 Table schema
 ![image](https://user-images.githubusercontent.com/43373811/219521367-3514d311-bcf4-436d-bc1d-fe5757db0944.png)
 
+1. nodes_data table
 
+
+```
+CREATE TABLE `demo`.`nodes_data` (
+  `node_id` INT NOT NULL,
+  `label` VARCHAR(100) NOT NULL
+  PRIMARY KEY (`node_id`)
+  
+  );
+```
+
+2. nodes_relation_data table
+
+
+```
+  CREATE TABLE `demo`.`nodes_relation_data` (
+  `node_id` INT NOT NULL,
+  `parent_id` INT NOT NULL
+   FOREIGN KEY(`node_id`d) REFERENCES `demo`.`nodes_data`(`node_id`)
+  );
+```
 #### Task 3
 
 Design a data schema for a database of your choice that would support the tree data above. Add to a `database.md` file.
