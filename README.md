@@ -1,53 +1,40 @@
 # Hinge Health Services Code Challenge
 
-## Welcome. Thank you for taking the time to collaborate with us today.
+## Get Started
 
-Today we’d like you to build a service that manages and manipulates trees. Our goal with this activity isn't to "stump" anyone with tricky business but to give candidates a fair and uniform way to express themselves in code on a realistic-ish problem.
- 
-This activity is purposely limited in scope to be respectful of your time while still enabling you to demonstrate how you approach and solve problems. If invited to an on-site interview, you'll pair with us to extend the service you created. We'd much rather see how you work on a problem you're familiar with than on some clever whiteboard puzzle we spring on you.
-
-At this stage, we care most about:
-- Interpreting written specifications (following instructions)
-- Good design decisions.
-- Ability to consider edge cases.
-- Documentation
+Techstack - Java, SpringBoot and Docker
+This Application is developed using java and springboot. This application has been dockerized so that you can build image and run it on any platform.
  
 
-### What language do I code in?
-Feel free to choose whichever language you are most comfortable in. We provided a few "hello world" services in directories named after the programming language of implementation. If picking a different language, create a directory with the name of the language, under which you should put your code.
+### Features of this application
+1. Implemented n-ary tree for adding Node
+2. Optimized in memory consumption
+3. Implemented the swagger documentation
+4. This application has been dockarized
+5. Wrote the test cases for most of the business logic
+6. Layered project structure and followed the SOLID principles
+7. Implemented loggers
 
-For whatever language you choose, please document in a readme.md the following. 
-1. How to set up your service
-2. How to run your service
-3. How to run the tests, if there are any
-4. Document any other design choices you made along the way.
-
-### How do I get started?
-Clone this repo, create a branch, and work off of this new branch. Do not merge the code into main. Oh, and don't squash your commits. We'd like to see the milestones of your progress. 
- 
-When you're done, push your code to this repo and email us.
+### Prerequisites
+1. Jdk 8 
+2. Docker desktop for windows (Optional). please follow the instructions mentioned on this page https://docs.docker.com/desktop/install/windows-install/
+3. Git bash (Optional)
 
 &nbsp;
-## The Problem
+## Setup and run
 
-A new frontend application is being built to spec by a team of coders out in deep space. Hence they are rarely available and unable to negotiate any changes to an API specified below. The application renders and stores a tree of data.
+1. Clone the application to your local system using the command 'git clone https://github.com/Hinge-Health-Recruiting/interviews-services_girish4118.git'
+2. In case if you don't have the git bash directly download the zip file
+3. After cloning/downloading navigate to the java_project and then open command prompt from there
+4. use the command 'gradlew build' the project.
+5. Once the build is success, navigate to the java_project/build/libs folder
+6. Open the command prompt from there and run the command 'java -jar demo-0.0.1-SNAPSHOT.jar'. That's it :-)
+7. hit the url in the browser 'http://localhost:3001/api/tree'
 
-Animals, an example of a tree;
 
-```
-1: root
-    2: ant
-    3: bear
-        4: cat
-        5: dog
-            6: elephant
-    7: frog
-```
-
-The format is a simple unique numeric id and alphanumeric label eg, `id: label`. Indentation indicates a child relationship. So, `1: root` has the children `2: ant, 3: bear, 7: frog`.
 
 &nbsp;
-## API Details and Challenge Tasks
+## API Specifications
 
 For the first two tasks, persisting data in memory or simple files is adequate.
 
@@ -57,30 +44,37 @@ The service should run on, `http://localhost:3001/api/<end-point>` and the follo
 ---
 <br>
 
-### 1. `GET /api/tree` return the entire tree - in the following format;
+### 1. `GET /api/tree` ;
+
+sample response
 
 ```
-[
-    {
-        "<id>": {
-            "label": "<first item>",
-            "children": [
-                {
-                    "<id>": {
-                        "label": "<another item>",
-                        "children": [] // empty children
-                    }
-                },
-                {
-                    "<id>": {
-                        "label": "<another item>",
-                        "children": [ ...<any children>... ]
-                    }
-                }
-            ]
-        }
-    }
-]
+[{
+	"1": {
+		"label": "root",
+		"children": [
+			[{
+				"3": {
+					"label": "ant",
+					"children": [
+						[{
+							"5": {
+								"label": "cat",
+								"children": []
+							}
+						}]
+					]
+				}
+			}],
+			[{
+				"4": {
+					"label": "bear",
+					"children": []
+				}
+			}]
+		]
+	}
+}]
 ```
 
 #### Task 1
