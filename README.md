@@ -122,8 +122,12 @@ sample Response in case of exception
 
 ### 3. Data persistance
 
-This part __does not__ have to be implemented in code. Document the queries, methods, and decisions you would make if implementing. 
-<br><br>
+Hopefully relational database should be sufficient for this approach. There are many RDB's available. I would choose either MYSQL or Postgres as they are popullar
+for their features
+
+Table schema
+![image](https://user-images.githubusercontent.com/43373811/219521367-3514d311-bcf4-436d-bc1d-fe5757db0944.png)
+
 
 #### Task 3
 
